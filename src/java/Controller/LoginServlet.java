@@ -66,15 +66,15 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String txtUname = request.getParameter("txtUname");
-        String txtpass = request.getParameter("txtPass");
+        String txtPass = request.getParameter("txtPass");
         try {
-            ResultSet result = new QueryBuilder().getDataWhere(txtUname, txtpass);
+            ResultSet result = new QueryBuilder().getDataWhere(txtUname, txtPass);
             while(result.next()) {
                 System.out.println(result.getString("uname"));
             }
-            response.sendRedirect("/loginusingJsp/home.jsp");
+            response.sendRedirect("/jsp_crud/home.jsp");
         } catch (SQLException ex) {
-            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
     }
 

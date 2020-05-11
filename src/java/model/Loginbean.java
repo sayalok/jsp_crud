@@ -5,10 +5,6 @@
  */
 package model;
 
-/**
- *
- * @author me
- */
 public class Loginbean {
     private String txtUname;
     private String txtPass;
@@ -27,8 +23,5 @@ public class Loginbean {
 
     public void setTxtPass(String txtPass) {
         this.txtPass = txtPass;
-    }
-    
-    
-    
+    }  
 }
