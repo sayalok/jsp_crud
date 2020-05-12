@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Session.Session;
 import database.QueryBuilder;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Loginbean;
 
 /**
@@ -69,10 +71,19 @@ public class LoginServlet extends HttpServlet {
         String txtPass = request.getParameter("txtPass");
         try {
             ResultSet result = new QueryBuilder().getDataWhere(txtUname, txtPass);
+            String username = "";
             while(result.next()) {
-                System.out.println(result.getString("uname"));
+                System.out.println("test1" + result.getString("uname"));
+                username = result.getString("uname");
             }
-            response.sendRedirect("/jsp_crud/home.jsp");
+            
+            if(username != "") {
+                HttpSession session = request.getSession();
+                new Session().setSess_uname(session, username);
+                response.sendRedirect("/jsp_crud/home.jsp");
+            } else {
+                response.sendRedirect("/jsp_crud/index.jsp");
+            }
         } catch (SQLException ex) {
             System.out.println(ex);
         }
