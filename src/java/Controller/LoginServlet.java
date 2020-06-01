@@ -69,11 +69,11 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String txtUname = request.getParameter("txtUname");
         String txtPass = request.getParameter("txtPass");
+        
         try {
             ResultSet result = new QueryBuilder().getDataWhere(txtUname, txtPass);
             String username = "";
             while(result.next()) {
-                System.out.println("test1" + result.getString("uname"));
                 username = result.getString("uname");
             }
             
