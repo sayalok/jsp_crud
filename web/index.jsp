@@ -1,25 +1,15 @@
-<%@ include file="/includes/header.html" %>
-<div class="container">
-    <h2 class="text-center"> Login Form</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-5 col-sm-6">
-            <div class="loginForm">
-                <form  method="post" action="beanHandler/login.jsp">
-<!--                <form id="loginForm">-->
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" name="txtUname" id="txtUname"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="txtPass" id="txtPass"/>
-                    </div>
-                    <input type="submit" name="btnLogin" value="Login"/>
-                </form>
-            </div>
-        </div>
-    </div>  
+<%@ include file="/includes/header.jsp" %>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h2>Login Form</h2>
+        <form method="post" action="beanHandler/login.jsp">
+          <input type="text" class="form-control fadeIn second" name="txtUname" id="txtUname" placeholder="Username"/>
+          <input type="password" class="form-control fadeIn third" name="txtPass" id="txtPass" placeholder="Password">
+          <input type="submit" class="fadeIn fourth" value="Log In" name="btnLogin"/>
+        </form>
+    </div>
 </div>
+
 <script>
     document.getElementById("loginForm").addEventListener("submit", (e) => {
         e.preventDefault();
@@ -35,6 +25,3 @@
     })
 </script>
 <%@ include file="/includes/footer.html" %>
-
-
-

@@ -1,18 +1,13 @@
-<%-- 
-    Document   : home
-    Created on : May 11, 2020, 10:27:49 PM
-    Author     : me
---%>
+<%@ include file="/includes/header.jsp" %>
+<%@ include file="/includes/navbar.jsp" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <%= session.getAttribute("uname") %>
-    </body>
-</html>
+<div class="container">
+    <div class="row">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            SDHKJK
+        </main>
+    </div>
+</div>
+
+    
+<%@ include file="/includes/footer.html" %>
